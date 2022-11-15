@@ -92,17 +92,27 @@ contract I_AM_UKRAINIAN is ERC721, Ownable {
 
     function addToWhitelist(address[] calldata _users) external onlyOwner {
         require(_users.length > 0, "No one to add");
+        uint256 len = _users.length;
 
-        for (uint256 i = 0; i < _users.length; i++) {
+        for (uint256 i = 0; i < len; ) {
             whitelist[_users[i]] = true;
+
+            unchecked {
+                i++;
+            }
         }
     }
 
     function removeFromWhitelist(address[] calldata _users) external onlyOwner {
         require(_users.length > 0, "No one to remove");
+        uint256 len = _users.length;
 
-        for (uint256 i = 0; i < _users.length; i++) {
+        for (uint256 i = 0; i < len; ) {
             whitelist[_users[i]] = false;
+
+            unchecked {
+                i++;
+            }
         }
     }
 
