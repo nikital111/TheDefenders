@@ -71,7 +71,7 @@ function App({ width }: AppInt) {
     // </div>
 
     <Box className={classes.app}>
-      <Header style={{}} />
+      <Header style={{}} width={width} />
 
       <Block1 width={width} />
 
@@ -81,7 +81,9 @@ function App({ width }: AppInt) {
 
       <Block4 width={width} />
 
-      <Header style={{ margin: "25px 0px" }} />
+      {width !== "xs" ? (
+        <Header style={{ margin: "25px 0px" }} width={width} />
+      ) : null}
     </Box>
   );
 }

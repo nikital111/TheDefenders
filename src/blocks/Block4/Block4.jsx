@@ -8,7 +8,8 @@ import Сlouds from "../../img/back/Тучи.png";
 import "./Block4.css";
 import SharedDivider from "../../components/SharedDivider";
 import SharedButton from "../../components/SharedButton";
-// import Discord from "../img/ico/иконка дискорд2.png";
+import Slide from 'react-reveal/Slide';
+import Bounce from 'react-reveal/Bounce';
 
 function Block4({ width }) {
   const useStyles = makeStyles((theme) => ({
@@ -18,9 +19,10 @@ function Block4({ width }) {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: '100%',
-      marginTop: width === 'sm' || width === 'xs' ? '70px' : '90px',
+      paddingTop: width === 'sm' || width === 'xs' ? '70px' : '90px',
       width: '100%',
       height: 'fit-content',
+      overflow: 'hidden',
     },
     inBox: {
       position: 'relative',
@@ -50,7 +52,7 @@ function Block4({ width }) {
       backgroundImage: `url("${Fon}")`,
       backgroundRepeat: 'no-repeat',
       borderRadius: width === 'xs' ? '30px' : '55px',
-      marginBottom: width === 'sm' || width === 'xs' ? '20px' : '60px'
+      marginBottom: width === 'sm' || width === 'xs' ? '20px' : '60px',
     },
     imgDefenders: {
       position: "absolute",
@@ -64,53 +66,98 @@ function Block4({ width }) {
     <Box className={classes.box}>
       <Box className={classes.inBox}>
         <Box className={classes.bigBox}>
-          <Typography
-            className={classes.mainText}
+          <Box
             style={{
-              fontSize: width === 'sm' ? '6rem' : width === 'xs' ? '3rem' : "9rem",
               position: 'absolute',
               top: width === 'md' ? '-96px' : width === 'sm' ? '-72px' : width === 'xs' ? '-36px' : '-108px',
               margin: 'auto'
             }}
           >
-            DISCORD
+            <Bounce left >
+              <Typography
+                className={classes.mainText}
+                style={{
+                  fontSize: width === 'sm' ? '6rem' : width === 'xs' ? '3rem' : "9rem",
+                }}
+              >
+                DISCORD
+
+              </Typography>
+            </Bounce>
+          </Box>
+          <Box
+            style={{
+              minWidth: width === 'xs' ? '90%' : '200px',
+              alignSelf: 'center',
+            }}
+          >
+            <Slide right>
+              <SharedButton back="black"
+                style={{
+                  marginTop: '0px',
+                  marginBottom: width === 'md' ? '70px' : width === 'sm' ? '50px' : width === 'xs' ? '15px' : '100px',
+                  padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                  fontSize: width === 'xs' ? '21px' : '',
+                  minWidth: width === 'xs' ? '100%' : '200px'
+                }}
+              >Join the party
+              </SharedButton>
+            </Slide>
+          </Box>
+          <Slide left>
+            <img src={Def1} className={classes.imgDefenders} alt="def" />
+          </Slide>
+        </Box>
+        <Slide left>
+          <Typography
+            className={classes.mainText}
+            style={{
+              fontSize: width === 'sm' ? '6rem' : width === 'xs' ? '5rem' : "9rem",
+              margin: 'auto'
+            }}
+          >
+            JOIN
 
           </Typography>
-          <SharedButton back="black"
-            style={{
-              marginTop: '0px',
-              marginBottom: width === 'md' ? '70px' : width === 'sm' ? '50px' : width === 'xs' ? '15px' : '100px',
-              padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-              fontSize: width === 'xs' ? '21px' : '',
-              minWidth: width === 'xs' ? '90%' : '200px'
-            }}
-          >Join the party</SharedButton>
-          <img src={Def1} className={classes.imgDefenders} alt="def" />
-        </Box>
-
-        <Typography
-          className={classes.mainText}
+        </Slide>
+        <Box
           style={{
-            fontSize: width === 'sm' ? '6rem' : width === 'xs' ? '5rem' : "9rem",
-            margin: 'auto'
+            minWidth: width === 'xs' ? '90%' : '200px',
+            alignSelf: 'center',
           }}
         >
-          JOIN
-
-        </Typography>
-
-        <SharedButton back="black"
+          <Slide right>
+            <SharedButton back="black"
+              style={{
+                margin: '0px',
+                padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                fontSize: width === 'xs' ? '21px' : '',
+                minWidth: width === 'xs' ? '100%' : '200px'
+              }}
+            >Join the club
+            </SharedButton>
+          </Slide>
+        </Box>
+        <Box
           style={{
-            margin: '0px',
-            padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-            fontSize: width === 'xs' ? '21px' : '',
-            minWidth: width === 'xs' ? '90%' : '200px'
+            position: "absolute",
+            bottom: "0px",
+            overflowY: 'hidden',
+            display: 'flex'
           }}
-        >Join the club</SharedButton>
-
-        <img src={Def2} className={classes.imgDefenders} alt="def" />
+        >
+          <Slide bottom>
+            <img src={Def2} style={{
+              maxWidth: width === 'md' ? '684px' : width === 'sm' ? '448px' : width === 'xs' ? '245px' : "90%",
+            }} alt="def" />
+          </Slide>
+        </Box>
       </Box>
-      <SharedDivider />
+      {
+        width !== 'xs' ?
+          <SharedDivider />
+          : null
+      }
     </Box>
   );
 }

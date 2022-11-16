@@ -8,6 +8,7 @@ import DefR from "../../img/defenders/персы прявый ряд.png";
 import "./Block1.css";
 import SharedButton from "../../components/SharedButton";
 import SharedDivider from "../../components/SharedDivider";
+import Slide from 'react-reveal/Slide';
 // import Discord from "../img/ico/иконка дискорд2.png";
 
 function Block1({ width }) {
@@ -25,6 +26,7 @@ function Block1({ width }) {
       marginTop: width === 'xs' ? '40px' : '60px',
       width: '100%',
       height: width === 'md' ? '515px' : width === 'sm' ? '360px' : width === 'xs' ? '226px' : '660px',
+      overflow: 'hidden',
     },
     inBox: {
       position: 'relative',
@@ -58,24 +60,37 @@ function Block1({ width }) {
 
 
       <Box className={classes.inBox}>
-        <img
-          src={BigLogo}
+        <Slide left>
+          <img
+            src={BigLogo}
+            style={{
+              maxWidth: width === 'md' ? '970px' : width === 'sm' ? '585px' : width === 'xs' ? '342px' : "100%",
+            }}
+            alt="logo"
+          />
+        </Slide>
+        <Box
           style={{
-            maxWidth: width === 'md' ? '970px' : width === 'sm' ? '585px' : width === 'xs' ? '342px' : "100%",
+            minWidth: width === 'xs' ? '90%' : '200px',
+            alignSelf: 'center',
           }}
-          alt="logo"
-        />
+        >
+          <Slide right>
+            <SharedButton back={"black"}
+              style={{
+                padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                fontSize: width === 'xs' ? '21px' : '',
+                minWidth: width === 'xs' ? '100%' : '200px'
+              }}
+            >MINT
+            </SharedButton>
+          </Slide>
+        </Box>
+        <Slide bottom>
+          <img src={DefL} className={classes.imgDefendersLeft} alt="defenders" />
 
-        <SharedButton back={"black"}
-          style={{
-            padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-            fontSize: width === 'xs' ? '21px' : '',
-            minWidth: width === 'xs' ? '90%' : '200px'
-          }}
-        >MINT</SharedButton>
-
-        <img src={DefL} className={classes.imgDefendersLeft} alt="defenders" />
-        <img src={DefR} className={classes.imgDefendersRight} alt="defenders" />
+          <img src={DefR} className={classes.imgDefendersRight} alt="defenders" />
+        </Slide>
       </Box>
       <SharedDivider />
     </Box>

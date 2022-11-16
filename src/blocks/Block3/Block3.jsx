@@ -12,6 +12,8 @@ import Fon from "../../img/back/Подложка под текст 1 фазы.pn
 import Сlouds from "../../img/back/Тучи.png";
 import "./Block3.css";
 import SharedDivider from "../../components/SharedDivider";
+import Bounce from 'react-reveal/Bounce';
+import Slide from 'react-reveal/Slide';
 // import Discord from "../img/ico/иконка дискорд2.png";
 
 function Block3({ width }) {
@@ -29,6 +31,7 @@ function Block3({ width }) {
       marginTop: width === 'sm' || width === 'xs' ? '20px' : '60px',
       width: '100%',
       height: 'fit-content',
+      overflow: 'hidden'
     },
     inBox: {
       position: 'relative',
@@ -93,75 +96,77 @@ function Block3({ width }) {
   return (
     <Box className={classes.box}>
       <Box className={classes.inBox}>
-        <Typography
-          className={classes.mainText}
-          style={{
-            fontSize: width === 'sm' ? '5rem' : width === 'xs' ? '4rem' : "7rem",
-            position: 'relative',
-            marginBottom: width === 'sm' || width === 'xs' ? '20px' : '60px'
-          }}
-        >
-          ROADMAP
-          <img src={Fly} className={classes.imgFly} alt="fly" />
-        </Typography>
-
+        <Bounce top>
+          <Typography
+            id="roadmap"
+            className={classes.mainText}
+            style={{
+              fontSize: width === 'sm' ? '5rem' : width === 'xs' ? '3rem' : "7rem",
+              position: 'relative',
+              marginBottom: width === 'sm' || width === 'xs' ? '20px' : '60px',
+            }}
+          >
+            ROADMAP
+            <img src={Fly} className={classes.imgFly} alt="fly" />
+          </Typography>
+        </Bounce>
         <Box className={classes.bigBox}>
-
-          <Box className={classes.miniBox}
-            style={{
-              width: width === 'sm' || width === 'xs' ? '95%' : '80%'
-            }}
-          >
-            <img src={Art1} className={classes.art} alt="art" />
-            <Box className={classes.backBox}>
-              <img src={Text1} className={classes.imgText} alt="text" />
-            </Box>
-          </Box>
-
-
-
-
-          <Box className={classes.miniBox}>
-
-            <Box className={classes.backBox}
+          <Slide left>
+            <Box className={classes.miniBox}
               style={{
-                width: '70%',
-                marginLeft: width === 'sm' || width === 'xs' ? '0px' : '20px'
+                width: width === 'sm' || width === 'xs' ? '95%' : '80%'
               }}
             >
-              <img src={Text2} className={classes.imgText} alt="text" />
+              <img src={Art1} className={classes.art} alt="art" />
+              <Box className={classes.backBox}>
+                <img src={Text1} className={classes.imgText} alt="text" />
+              </Box>
             </Box>
-            <img src={Art2} className={classes.art} alt="art"
+          </Slide>
+
+
+          <Slide right>
+            <Box className={classes.miniBox}>
+
+              <Box className={classes.backBox}
+                style={{
+                  width: '70%',
+                  marginLeft: width === 'sm' || width === 'xs' ? '0px' : '20px'
+                }}
+              >
+                <img src={Text2} className={classes.imgText} alt="text" />
+              </Box>
+              <img src={Art2} className={classes.art} alt="art"
+                style={{
+                  width: '30%',
+                  margin: width === 'sm' || width === 'xs' ? '0px 00px 0px 10px' : '0px 40px 0px 30px'
+                }}
+              />
+            </Box>
+          </Slide>
+
+
+          <Slide left>
+            <Box className={classes.miniBox}
               style={{
-                width: '30%',
-                margin: width === 'sm' || width === 'xs' ? '0px 00px 0px 10px' : '0px 40px 0px 30px'
-              }}
-            />
-          </Box>
-
-
-
-
-          <Box className={classes.miniBox}
-            style={{
-              width: width === 'sm' || width === 'xs' ? '95%' : '70%'
-            }}
-          >
-            <img src={Art3} className={classes.art} alt="art"
-              style={{
-                width: '35%',
-                margin: '0px'
-              }}
-            />
-            <Box className={classes.backBox}
-              style={{
-                width: '65%'
+                width: width === 'sm' || width === 'xs' ? '95%' : '70%'
               }}
             >
-              <img src={Text3} className={classes.imgText} alt="text" style={{ width: '50%' }} />
+              <img src={Art3} className={classes.art} alt="art"
+                style={{
+                  width: '35%',
+                  margin: '0px'
+                }}
+              />
+              <Box className={classes.backBox}
+                style={{
+                  width: '65%'
+                }}
+              >
+                <img src={Text3} className={classes.imgText} alt="text" style={{ width: '50%' }} />
+              </Box>
             </Box>
-          </Box>
-
+          </Slide>
         </Box>
 
       </Box>

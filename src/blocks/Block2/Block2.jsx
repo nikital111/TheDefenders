@@ -6,6 +6,8 @@ import Сlouds from "../../img/back/Тучи.png";
 import "./Block2.css";
 import SharedButton from "../../components/SharedButton";
 import SharedDivider from "../../components/SharedDivider";
+import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 // import Discord from "../img/ico/иконка дискорд2.png";
 
 function Block2({ width }) {
@@ -23,6 +25,7 @@ function Block2({ width }) {
       marginTop: width === 'sm' ? '20px' : width === 'xs' ? '20px' : '60px',
       width: '100%',
       height: width === 'sm' ? '500px' : width === 'xs' ? '570px' : '760px',
+      overflow: 'hidden',
     },
     inBox: {
       position: 'relative',
@@ -86,65 +89,84 @@ function Block2({ width }) {
   const classes = useStyles();
 
   return (
-    <Box className={classes.box}>
+    <Box id="about" className={classes.box}>
       <Box className={classes.inBox}>
+
         <Box className={classes.bigBox}>
-          <Box className={classes.miniBox}>
-            <Typography className={classes.mainText}>10.000</Typography>
-            <Typography className={classes.subText}>DEFENDERS</Typography>
-          </Box>
-          <Box className={classes.miniBox}>
-            <Typography className={classes.mainText}>145</Typography>
-            <Typography className={classes.subText}>Traits</Typography>
-          </Box>
-          <Box className={classes.miniBox}>
-            <Typography className={classes.mainText}>TBA</Typography>
-            <Typography className={classes.subText}>Mint date</Typography>
-          </Box>
+          <Slide top>
+            <Box className={classes.miniBox}>
+              <Typography className={classes.mainText}>10.000</Typography>
+              <Typography className={classes.subText}>DEFENDERS</Typography>
+            </Box>
+            <Box className={classes.miniBox}>
+              <Typography className={classes.mainText}>145</Typography>
+              <Typography className={classes.subText}>Traits</Typography>
+            </Box>
+            <Box className={classes.miniBox}>
+              <Typography className={classes.mainText}>TBA</Typography>
+              <Typography className={classes.subText}>Mint date</Typography>
+            </Box>
+          </Slide>
         </Box>
 
-        <Typography
-          className={classes.mainText}
-          style={{
-            fontSize: width === 'sm' || width === 'xs' ? '5rem' : "7rem",
-          }}
-        >
-          ABOUT
-        </Typography>
-
-        <Box className={classes.aboutBox}>
+        <Slide left>
           <Typography
-            className={classes.aboutText}>
-            10.000 nft colection the defenders living on ethereum blockchain.
-          </Typography>
 
-          <Typography
-            className={classes.aboutText}>
-            your future energy in the gamefi ecosystem.
-          </Typography>
-
-          <Typography
-            className={classes.aboutText}>
-            we will be introducing world's defenders super game.
-          </Typography>
-
-          <Typography
-            className={classes.aboutText}
+            className={classes.mainText}
             style={{
-              marginBottom: width === 'sm' || width === 'xs' ? '0px' : '40px'
+              fontSize: width === 'sm' || width === 'xs' ? '5rem' : "7rem",
             }}
           >
-            it a battle royale with revolutionary new technologies.
+            ABOUT
           </Typography>
-          <SharedButton back={"black"} style={{
-            alignSelf: 'center',
-            padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-            fontSize: width === 'xs' ? '21px' : '',
-            minWidth: width === 'xs' ? '100%' : '200px'
-          }}>MINT</SharedButton>
+        </Slide>
+
+        <Box className={classes.aboutBox}>
+          <Fade bottom>
+            <Typography
+              className={classes.aboutText}>
+              10.000 nft colection the defenders living on ethereum blockchain.
+            </Typography>
+
+            <Typography
+              className={classes.aboutText}>
+              your future energy in the gamefi ecosystem.
+            </Typography>
+
+            <Typography
+              className={classes.aboutText}>
+              we will be introducing world's defenders super game.
+            </Typography>
+
+            <Typography
+              className={classes.aboutText}
+              style={{
+                marginBottom: width === 'sm' || width === 'xs' ? '0px' : '40px'
+              }}
+            >
+              it a battle royale with revolutionary new technologies.
+            </Typography>
+          </Fade>
+          <Box
+            style={{
+              alignSelf: 'center',
+              minWidth: width === 'xs' ? '100%' : '200px'
+            }}
+          >
+            <Slide right>
+              <SharedButton back={"black"} style={{
+                padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                fontSize: width === 'xs' ? '21px' : '',
+                minWidth: width === 'xs' ? '100%' : '200px'
+              }}>MINT</SharedButton>
+            </Slide>
+          </Box>
         </Box>
 
-        <img src={Def} className={classes.imgDefenders} alt="defenders" />
+
+        <Slide bottom>
+          <img src={Def} className={classes.imgDefenders} alt="defenders" />
+        </Slide>
       </Box>
       <SharedDivider />
     </Box>
