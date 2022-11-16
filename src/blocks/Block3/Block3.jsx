@@ -26,7 +26,7 @@ function Block3({ width }) {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: '100%',
-      marginTop: width === 'sm' ? '20px' : '60px',
+      marginTop: width === 'sm' || width === 'xs' ? '20px' : '60px',
       width: '100%',
       height: 'fit-content',
     },
@@ -59,13 +59,13 @@ function Block3({ width }) {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      width: width === 'sm' ? '95%' : '100%',
+      width: width === 'sm' || width === 'xs' ? '95%' : '100%',
       color: "white",
-      margin: width === 'sm' ? '10px auto' : '10px 0px'
+      margin: width === 'sm' || width === 'xs' ? '10px auto' : '10px 0px'
     },
     art: {
       width: '20%',
-      margin: width === 'sm' ? '0px 10px 0px 0px' : '0px 30px 0px 40px',
+      margin: width === 'sm' || width === 'xs' ? '0px 10px 0px 0px' : '0px 30px 0px 40px',
     },
     backBox: {
       backgroundImage: `url("${Fon}")`,
@@ -96,9 +96,9 @@ function Block3({ width }) {
         <Typography
           className={classes.mainText}
           style={{
-            fontSize: width === 'sm' ? '5rem' : "7rem",
+            fontSize: width === 'sm' ? '5rem' : width === 'xs' ? '4rem' : "7rem",
             position: 'relative',
-            marginBottom: width === 'sm' ? '20px' : '60px'
+            marginBottom: width === 'sm' || width === 'xs' ? '20px' : '60px'
           }}
         >
           ROADMAP
@@ -109,7 +109,7 @@ function Block3({ width }) {
 
           <Box className={classes.miniBox}
             style={{
-              width: width === 'sm' ? '95%' : '80%'
+              width: width === 'sm' || width === 'xs' ? '95%' : '80%'
             }}
           >
             <img src={Art1} className={classes.art} alt="art" />
@@ -126,7 +126,7 @@ function Block3({ width }) {
             <Box className={classes.backBox}
               style={{
                 width: '70%',
-                marginLeft: width === 'sm' ? '0px' : '20px'
+                marginLeft: width === 'sm' || width === 'xs' ? '0px' : '20px'
               }}
             >
               <img src={Text2} className={classes.imgText} alt="text" />
@@ -134,7 +134,7 @@ function Block3({ width }) {
             <img src={Art2} className={classes.art} alt="art"
               style={{
                 width: '30%',
-                margin: width === 'sm' ? '0px 00px 0px 10px' : '0px 40px 0px 30px'
+                margin: width === 'sm' || width === 'xs' ? '0px 00px 0px 10px' : '0px 40px 0px 30px'
               }}
             />
           </Box>
@@ -144,7 +144,7 @@ function Block3({ width }) {
 
           <Box className={classes.miniBox}
             style={{
-              width: width === 'sm' ? '95%' : '70%'
+              width: width === 'sm' || width === 'xs' ? '95%' : '70%'
             }}
           >
             <img src={Art3} className={classes.art} alt="art"
