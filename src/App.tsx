@@ -2,15 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Web3 from "web3";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
+import { Box, Button, withWidth } from "@material-ui/core";
 import Deploy from "./scripts/deploy";
 import Header from "./static/Header";
 import Block1 from "./blocks/Block1/Block1";
 import Block2 from "./blocks/Block2/Block2";
 import Block3 from "./blocks/Block3/Block3";
+import Block4 from "./blocks/Block4/Block4";
 
 declare let window: any;
-function App() {
+
+interface AppInt {
+  width: string;
+}
+
+function App({ width }: AppInt) {
   const [web3, setWeb3] = useState(new Web3(window.ethereum));
 
   useEffect(() => {
@@ -18,6 +24,10 @@ function App() {
       // ff();
     }
   }, []);
+
+  useEffect(() => {
+    console.log(width);
+  }, [width]);
 
   const ff = async () => {
     try {
@@ -44,30 +54,7 @@ function App() {
   };
 
   const useStyles = makeStyles((theme) => ({
-    app: {
-      position: "absolute",
-      top: "0px",
-      bottom: "0px",
-      right: "0px",
-      left: "0px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    butt: {
-      backgroundColor: "rgb(72, 157, 254)",
-      width: "200px",
-      height: "50px",
-      borderRadius: "20px",
-      color: "#fff",
-      marginTop: "25px",
-      fontWeight: "bold",
-      fontSize: "15px",
-      "&.MuiButton-root:hover": {
-        backgroundColor: "rgb(72, 157, 254)",
-        boxShadow: "none",
-      },
-    },
+    app: {},
   }));
   const classes = useStyles();
 
@@ -83,16 +70,20 @@ function App() {
     //   </Button>
     // </div>
 
-    <>
-      <Header />
+    <Box className={classes.app}>
+      <Header style={{}} />
 
-      <Block1 />
+      <Block1 width={width} />
 
-      <Block2 />
+      <Block2 width={width} />
 
-      <Block3 />
-    </>
+      <Block3 width={width} />
+
+      <Block4 width={width} />
+
+      <Header style={{ margin: "25px 0px" }} />
+    </Box>
   );
 }
 
-export default App;
+export default withWidth()(App);

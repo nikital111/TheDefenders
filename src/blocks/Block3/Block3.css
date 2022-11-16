@@ -4,11 +4,18 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+  margin-top: 60px;
+  width: 100%;
+  height: fit-content;
+}
+
+.inBox3 {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 60px;
-  width: 100%;
-  height: fit-content;
+  max-width: 1300px;
+  height: 100%;
+  margin: 0px auto;
 }

@@ -9,23 +9,36 @@ import Text2 from "../../img/text/artText2.png";
 import Art3 from "../../img/other/3 фаза арт.png";
 import Text3 from "../../img/text/artText3.png";
 import Fon from "../../img/back/Подложка под текст 1 фазы.png";
+import Сlouds from "../../img/back/Тучи.png";
 import "./Block3.css";
 import SharedDivider from "../../components/SharedDivider";
 // import Discord from "../img/ico/иконка дискорд2.png";
 
-function Block3() {
+function Block3({ width }) {
   const useStyles = makeStyles((theme) => ({
     cont: {
       display: "flex",
       justifyContent: "space-between",
     },
     box: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: "60px",
-      width: "100%",
+      position: 'relative',
+      backgroundImage: `url(${Сlouds})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: '100%',
+      marginTop: width === 'sm' ? '20px' : '60px',
+      width: '100%',
+      height: 'fit-content',
+    },
+    inBox: {
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      maxWidth: '1300px',
+      height: '100%',
+      margin: '0px auto',
     },
     imgFly: {
       position: "absolute",
@@ -46,13 +59,13 @@ function Block3() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      width: '100%',
+      width: width === 'sm' ? '95%' : '100%',
       color: "white",
-      margin: '10px 0px'
+      margin: width === 'sm' ? '10px auto' : '10px 0px'
     },
     art: {
       width: '20%',
-      margin: '0px 30px 0px 40px',
+      margin: width === 'sm' ? '0px 10px 0px 0px' : '0px 30px 0px 40px',
     },
     backBox: {
       backgroundImage: `url("${Fon}")`,
@@ -78,84 +91,80 @@ function Block3() {
   const classes = useStyles();
 
   return (
-    <Box className="box3">
-
-      <Typography
-        className={classes.mainText}
-        style={{
-          fontSize: "7rem",
-          position: 'relative',
-          marginBottom: '60px'
-        }}
-      >
-        ROADMAP
-        <img src={Fly} className={classes.imgFly} alt="fly" />
-      </Typography>
-
-      <Box className={classes.bigBox}>
-
-        <Box className={classes.miniBox}
+    <Box className={classes.box}>
+      <Box className={classes.inBox}>
+        <Typography
+          className={classes.mainText}
           style={{
-            width: '80%'
+            fontSize: width === 'sm' ? '5rem' : "7rem",
+            position: 'relative',
+            marginBottom: width === 'sm' ? '20px' : '60px'
           }}
         >
-          <img src={Art1} className={classes.art} alt="art" />
-          <Box className={classes.backBox}>
-            <img src={Text1} className={classes.imgText} alt="text" />
-          </Box>
-        </Box>
+          ROADMAP
+          <img src={Fly} className={classes.imgFly} alt="fly" />
+        </Typography>
 
+        <Box className={classes.bigBox}>
 
-
-
-        <Box className={classes.miniBox}
-          style={{
-
-          }}
-        >
-
-          <Box className={classes.backBox}
+          <Box className={classes.miniBox}
             style={{
-              width: '70%',
-              marginLeft: '20px'
+              width: width === 'sm' ? '95%' : '80%'
             }}
           >
-            <img src={Text2} className={classes.imgText} alt="text" />
+            <img src={Art1} className={classes.art} alt="art" />
+            <Box className={classes.backBox}>
+              <img src={Text1} className={classes.imgText} alt="text" />
+            </Box>
           </Box>
-          <img src={Art2} className={classes.art} alt="art"
+
+
+
+
+          <Box className={classes.miniBox}>
+
+            <Box className={classes.backBox}
+              style={{
+                width: '70%',
+                marginLeft: width === 'sm' ? '0px' : '20px'
+              }}
+            >
+              <img src={Text2} className={classes.imgText} alt="text" />
+            </Box>
+            <img src={Art2} className={classes.art} alt="art"
+              style={{
+                width: '30%',
+                margin: width === 'sm' ? '0px 00px 0px 10px' : '0px 40px 0px 30px'
+              }}
+            />
+          </Box>
+
+
+
+
+          <Box className={classes.miniBox}
             style={{
-              width: '30%',
-              margin: '0px 40px 0px 30px'
-            }}
-          />
-        </Box>
-
-
-
-
-        <Box className={classes.miniBox}
-          style={{
-            width: '70%'
-          }}
-        >
-          <img src={Art3} className={classes.art} alt="art"
-            style={{
-              width: '35%',
-              margin: '0px'
-            }}
-          />
-          <Box className={classes.backBox}
-            style={{
-              width: '65%'
+              width: width === 'sm' ? '95%' : '70%'
             }}
           >
-            <img src={Text3} className={classes.imgText} alt="text" style={{ width: '50%' }} />
+            <img src={Art3} className={classes.art} alt="art"
+              style={{
+                width: '35%',
+                margin: '0px'
+              }}
+            />
+            <Box className={classes.backBox}
+              style={{
+                width: '65%'
+              }}
+            >
+              <img src={Text3} className={classes.imgText} alt="text" style={{ width: '50%' }} />
+            </Box>
           </Box>
+
         </Box>
 
       </Box>
-
-
       <SharedDivider />
     </Box>
   );

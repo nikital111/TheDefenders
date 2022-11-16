@@ -7,7 +7,7 @@ import { Button } from "@material-ui/core"; //
 function SharedButton({ back, children, style }) {
     const useStyles = makeStyles((theme) => ({
         butt: {
-            width: "200px",
+            minWidth: "200px",
             padding: "20px",
             textTransform: "uppercase",
             fontWeight: "900",

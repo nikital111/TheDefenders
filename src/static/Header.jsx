@@ -4,11 +4,12 @@ import { Box, Container, Typography } from "@material-ui/core"; //
 import Twit from "../img/ico/Иконка твиттер2.png";
 import Discord from "../img/ico/иконка дискорд2.png";
 
-function Header() {
+function Header({ style }) {
   const useStyles = makeStyles((theme) => ({
     cont: {
       display: "flex",
       justifyContent: "space-between",
+      maxWidth: '100%'
     },
     text1: {
       textTransform: "uppercase",
@@ -24,7 +25,7 @@ function Header() {
   const classes = useStyles();
 
   return (
-    <Container className={classes.cont}>
+    <Container className={classes.cont} style={style}>
       <Box className={classes.box}>
         <Typography className={classes.text1}>The defenders</Typography>
       </Box>
