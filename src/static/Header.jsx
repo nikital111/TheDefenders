@@ -16,9 +16,10 @@ function Header({ style, width }) {
 
   const StyledSwipeableDrawer = withStyles({
     paper: {
-      backgroundColor: "rgb(35, 36, 47)",
+      backgroundColor: "#3DA2FF",
       color: 'white!important',
       width: "250px",
+      borderLeft: '3px solid black',
       "&.MuiListItem-root": {
         color: "white"
       }
@@ -56,8 +57,44 @@ function Header({ style, width }) {
           role="presentation"
           onClick={() => toggleDrawer(false)}
           onKeyDown={() => toggleDrawer(false)}
+          style={{
+            paddingTop: '20px'
+          }}
         >
-          asdasd
+          <a href="#about">
+            <Typography
+              className={classes.text1}
+              style={{
+                width: 'fit-content',
+                margin: 'auto',
+              }}
+            >
+              ABOUT
+            </Typography>
+          </a>
+
+          <a href="#roadmap">
+            <Typography
+              className={classes.text1}
+              style={{
+                width: 'fit-content',
+                margin: 'auto',
+              }}
+            >
+              ROADMAP
+            </Typography>
+          </a>
+
+          <Box
+            style={{
+              marginTop: "5px",
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <a href="discord"><img src={Discord} alt="discord" /></a>
+            <a href="twitter"><img src={Twit} alt="twitter" /></a>
+          </Box>
         </Box>
       </StyledSwipeableDrawer>
 
@@ -100,8 +137,8 @@ function Header({ style, width }) {
                 marginTop: "5px",
               }}
             >
-              <img src={Discord} alt="discord" />
-              <img src={Twit} alt="twitter" />
+              <a href="discord"><img src={Discord} alt="discord" /></a>
+              <a href="twitter"><img src={Twit} alt="twitter" /></a>
             </Box>
           </Container>
       }

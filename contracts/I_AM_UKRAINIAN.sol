@@ -13,7 +13,7 @@ contract I_AM_UKRAINIAN is ERC721, Ownable {
         "ipfs://QmeRMfUzVGjjsPTpBYRdnZfjSQ6u3N6vdDi2LSpVdELJsA";
     uint256 internal currentIndex;
     uint256 internal maxSupply = 10000;
-    uint256 public price = 1 ether;
+    uint256 public price = 0.01 ether;
 
     enum Status {
         PAUSE,
@@ -24,7 +24,7 @@ contract I_AM_UKRAINIAN is ERC721, Ownable {
 
     mapping(address => bool) whitelist;
 
-    constructor() ERC721("NFT", "NFT") {}
+    constructor() ERC721("I AM UKRAINIAN", "IAMU") {}
 
     function _baseURI() internal view override returns (string memory) {
         return baseURI;

@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Button, Container, Typography } from "@material-ui/core"; //
+import { Box, Typography } from "@material-ui/core"; //
 import Def from "../../img/defenders/Перс 1.png";
 import Сlouds from "../../img/back/Тучи.png";
-import "./Block2.css";
 import SharedButton from "../../components/SharedButton";
 import SharedDivider from "../../components/SharedDivider";
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
-// import Discord from "../img/ico/иконка дискорд2.png";
 
 function Block2({ width }) {
   const useStyles = makeStyles((theme) => ({
@@ -154,11 +152,13 @@ function Block2({ width }) {
             }}
           >
             <Slide right>
-              <SharedButton back={"black"} style={{
-                padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-                fontSize: width === 'xs' ? '21px' : '',
-                minWidth: width === 'xs' ? '100%' : '200px'
-              }}>MINT</SharedButton>
+              <a href="#mint">
+                <SharedButton back={"#404F55"} style={{
+                  padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                  fontSize: width === 'xs' ? '21px' : '',
+                  minWidth: width === 'xs' ? '100%' : '200px'
+                }}>MINT</SharedButton>
+              </a>
             </Slide>
           </Box>
         </Box>

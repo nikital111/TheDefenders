@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Button, Container, Typography } from "@material-ui/core"; //
+import { Box, Typography } from "@material-ui/core"; //
 import Fon from "../../img/other/Подложка.png";
 import Def1 from "../../img/defenders/Персонажи рядок.png";
 import Def2 from "../../img/defenders/Персонажи в рядок.png";
 import Сlouds from "../../img/back/Тучи.png";
-import "./Block4.css";
 import SharedDivider from "../../components/SharedDivider";
 import SharedButton from "../../components/SharedButton";
 import Slide from 'react-reveal/Slide';
@@ -148,7 +147,7 @@ function Block4({ width }) {
         >
           <Slide bottom>
             <img src={Def2} style={{
-              maxWidth: width === 'md' ? '684px' : width === 'sm' ? '448px' : width === 'xs' ? '245px' : "90%",
+              maxWidth: width === 'md' ? '684px' : width === 'sm' ? '448px' : width === 'xs' ? '245px' : "100%",
             }} alt="def" />
           </Slide>
         </Box>

@@ -1,3 +1,5 @@
+/* eslint-disable jest/valid-expect */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { time, loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { I_AM_UKRAINIAN } from "../typechain-types";
@@ -370,7 +372,7 @@ describe("NFT", function () {
       deployNFTFixtureMINTED
     );
     const address0 = "0x0000000000000000000000000000000000000000";
-    const totalSupply = await nft.totalSupply();
+    const totalSupply: any = await nft.totalSupply();
     // await nft.approve(otherAccount.address, 1);
 
     const transferTx = await nft["safeTransferFrom(address,address,uint256)"](
@@ -417,7 +419,7 @@ describe("NFT", function () {
       deployNFTFixtureMINTED
     );
     const address0 = "0x0000000000000000000000000000000000000000";
-    const totalSupply = await nft.totalSupply();
+    const totalSupply: any = await nft.totalSupply();
     // await nft.approve(otherAccount.address, 1);
     await nft.setApprovalForAll(otherAccount.address, true);
 

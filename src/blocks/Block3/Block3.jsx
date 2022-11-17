@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Button, Container, Typography } from "@material-ui/core"; //
+import { Box, Typography } from "@material-ui/core"; //
 import Fly from "../../img/other/Пиксельный самолет .png";
 import Art1 from "../../img/other/1 фаза арт.png";
 import Text1 from "../../img/text/artText1.png";
@@ -10,11 +10,9 @@ import Art3 from "../../img/other/3 фаза арт.png";
 import Text3 from "../../img/text/artText3.png";
 import Fon from "../../img/back/Подложка под текст 1 фазы.png";
 import Сlouds from "../../img/back/Тучи.png";
-import "./Block3.css";
 import SharedDivider from "../../components/SharedDivider";
 import Bounce from 'react-reveal/Bounce';
 import Slide from 'react-reveal/Slide';
-// import Discord from "../img/ico/иконка дискорд2.png";
 
 function Block3({ width }) {
   const useStyles = makeStyles((theme) => ({
@@ -149,7 +147,7 @@ function Block3({ width }) {
           <Slide left>
             <Box className={classes.miniBox}
               style={{
-                width: width === 'sm' || width === 'xs' ? '95%' : '70%'
+                width: width === 'sm' || width === 'xs' ? '95%' : width === 'md' ? "70%" : '100%'
               }}
             >
               <img src={Art3} className={classes.art} alt="art"

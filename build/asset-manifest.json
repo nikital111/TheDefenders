@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c10ba86.css",
-    "main.js": "/static/js/main.2ca873e5.js",
+    "main.css": "/static/css/main.2f4f484c.css",
+    "main.js": "/static/js/main.6ffd9ba7.js",
     "static/media/Фон без туч.jpg": "/static/media/Фон без туч.6a19615865501e292ac9.jpg",
     "static/media/Персонажи рядок.png": "/static/media/Персонажи рядок.641d1c71155047a82ad9.png",
     "static/media/3 фаза арт.png": "/static/media/3 фаза арт.79d96d37d403e6f9356a.png",
@@ -21,11 +21,11 @@
     "static/media/Подложка.png": "/static/media/Подложка.f45ca424a40bbe396349.png",
     "static/media/Разделитель блоков.png": "/static/media/Разделитель блоков.9e3a7e7e3ee2869fa3bf.png",
     "index.html": "/index.html",
-    "main.9c10ba86.css.map": "/static/css/main.9c10ba86.css.map",
-    "main.2ca873e5.js.map": "/static/js/main.2ca873e5.js.map"
+    "main.2f4f484c.css.map": "/static/css/main.2f4f484c.css.map",
+    "main.6ffd9ba7.js.map": "/static/js/main.6ffd9ba7.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c10ba86.css",
-    "static/js/main.2ca873e5.js"
+    "static/css/main.2f4f484c.css",
+    "static/js/main.6ffd9ba7.js"
   ]
 }

@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core"; //
 
 // import Discord from "../img/ico/иконка дискорд2.png";
 
-function SharedButton({ back, children, style }) {
+function SharedButton({ back, children, style, onClick }) {
     const useStyles = makeStyles((theme) => ({
         butt: {
             minWidth: "200px",
@@ -24,7 +24,7 @@ function SharedButton({ back, children, style }) {
     }));
     const classes = useStyles();
 
-    return <Button className={classes.butt} style={style}>{children}</Button>;
+    return <Button className={classes.butt} style={style} onClick={onClick}>{children}</Button>;
 }
 
 export default SharedButton;

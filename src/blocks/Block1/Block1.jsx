@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Button, Container, Typography } from "@material-ui/core"; //
+import { Box } from "@material-ui/core"; //
 import BigLogo from "../../img/text/Главный текс по центру.png";
 import Сlouds from "../../img/back/Тучи.png";
 import DefL from "../../img/defenders/Персы левый ряд.png";
 import DefR from "../../img/defenders/персы прявый ряд.png";
-import "./Block1.css";
 import SharedButton from "../../components/SharedButton";
 import SharedDivider from "../../components/SharedDivider";
 import Slide from 'react-reveal/Slide';
-// import Discord from "../img/ico/иконка дискорд2.png";
+import Mint from "../../scripts/mint";
 
-function Block1({ width }) {
+function Block1({ width, web3, contract, handle }) {
   const useStyles = makeStyles((theme) => ({
     cont: {
       display: "flex",
@@ -55,8 +54,13 @@ function Block1({ width }) {
   }));
   const classes = useStyles();
 
+  const mint = async () => {
+    await Mint(web3, contract, 1, handle);
+    handle("");
+  };
+
   return (
-    <Box className={classes.box}>
+    <Box className={classes.box} id="mint">
 
 
       <Box className={classes.inBox}>
@@ -76,7 +80,7 @@ function Block1({ width }) {
           }}
         >
           <Slide right>
-            <SharedButton back={"black"}
+            <SharedButton back={"black"} onClick={mint}
               style={{
                 padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
                 fontSize: width === 'xs' ? '21px' : '',
