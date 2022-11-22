@@ -92,8 +92,8 @@ function Header({ style, width }) {
               justifyContent: 'center'
             }}
           >
-            <a href="discord"><img src={Discord} alt="discord" /></a>
-            <a href="twitter"><img src={Twit} alt="twitter" /></a>
+            <a href="https://discord.gg/thedefenders" target="_blank"><img src={Discord} alt="discord" /></a>
+            <a href="https://twitter.com/TheDefendersNFT" target="_blank"><img src={Twit} alt="twitter" /></a>
           </Box>
         </Box>
       </StyledSwipeableDrawer>
@@ -137,8 +137,8 @@ function Header({ style, width }) {
                 marginTop: "5px",
               }}
             >
-              <a href="discord"><img src={Discord} alt="discord" /></a>
-              <a href="twitter"><img src={Twit} alt="twitter" /></a>
+              <a href="https://discord.gg/thedefenders" target="_blank"><img src={Discord} alt="discord" /></a>
+              <a href="https://twitter.com/TheDefendersNFT" target="_blank"><img src={Twit} alt="twitter" /></a>
             </Box>
           </Container>
       }

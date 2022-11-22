@@ -85,7 +85,7 @@ describe("NFT", function () {
     expect(nft.address).to.be.properAddress;
     expect(supply).to.eq(0);
     expect(contractURI).to.eq(
-      "ipfs://QmeRMfUzVGjjsPTpBYRdnZfjSQ6u3N6vdDi2LSpVdELJsA"
+      "ipfs://QmQLEudADKJhY48C7aR31JtE9neVuiYmbSSh9Wxs2PvcWB"
     );
     expect(ownerOfContract).to.eq(owner.address);
     expect(status).to.eq(0);

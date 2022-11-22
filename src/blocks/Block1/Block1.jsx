@@ -7,8 +7,9 @@ import DefL from "../../img/defenders/Персы левый ряд.png";
 import DefR from "../../img/defenders/персы прявый ряд.png";
 import SharedButton from "../../components/SharedButton";
 import SharedDivider from "../../components/SharedDivider";
-import Slide from 'react-reveal/Slide';
+import { Slide } from "react-awesome-reveal";
 import Mint from "../../scripts/mint";
+import deployUser from "../../scripts/deployUser";
 
 function Block1({ width, web3, contract, handle }) {
   const useStyles = makeStyles((theme) => ({
@@ -38,18 +39,10 @@ function Block1({ width, web3, contract, handle }) {
       margin: '0px auto',
     },
     imgDefendersLeft: {
-      position: "absolute",
-      bottom: "0px",
-      left: width === 'xs' ? '10px' : "20px",
-      width: "600px",
-      maxWidth: width === 'md' ? '416px' : width === 'sm' ? '260px' : width === 'xs' ? '151px' : "44%",
+      width: '100%'
     },
     imgDefendersRight: {
-      position: "absolute",
-      bottom: "0px",
-      right: width === 'xs' ? '10px' : "20px",
-      width: "600px",
-      maxWidth: width === 'md' ? '416px' : width === 'sm' ? '260px' : width === 'xs' ? '151px' : "44%",
+      width: '100%'
     },
   }));
   const classes = useStyles();
@@ -64,7 +57,7 @@ function Block1({ width, web3, contract, handle }) {
 
 
       <Box className={classes.inBox}>
-        <Slide left>
+        <Slide direction="left" triggerOnce>
           <img
             src={BigLogo}
             style={{
@@ -79,20 +72,51 @@ function Block1({ width, web3, contract, handle }) {
             alignSelf: 'center',
           }}
         >
-          <Slide right>
-            <SharedButton back={"black"} onClick={mint}
-              style={{
-                padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-                fontSize: width === 'xs' ? '21px' : '',
-                minWidth: width === 'xs' ? '100%' : '200px'
-              }}
-            >MINT
-            </SharedButton>
+          <Slide direction="right" triggerOnce>
+            <a href="https://www.premint.xyz/thedefenders/" target="_blank">
+              <SharedButton back={"black"}
+                // onClick={mint}
+                style={{
+                  padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                  fontSize: width === 'xs' ? '21px' : '',
+                  minWidth: width === 'xs' ? '100%' : '200px'
+                }}
+              >Join the waitlist
+              </SharedButton>
+            </a>
           </Slide>
         </Box>
-        <Slide bottom>
+        <Slide direction="up" triggerOnce
+          style={{
+            position: "absolute",
+            bottom: "0px",
+            left: width === 'xs' ? '10px' : "20px",
+            width: "600px",
+            maxWidth: width === 'md' ? '416px' : width === 'sm' ? '260px' : width === 'xs' ? '151px' : "44%",
+            display: 'flex',
+
+            position: "absolute",
+            bottom: "0px",
+            right: width === 'xs' ? '10px' : "20px",
+            width: "600px",
+            maxWidth: width === 'md' ? '416px' : width === 'sm' ? '260px' : width === 'xs' ? '151px' : "44%",
+          }}
+        >
           <img src={DefL} className={classes.imgDefendersLeft} alt="defenders" />
 
+          {/* <img src={DefR} className={classes.imgDefendersRight} alt="defenders" /> */}
+        </Slide>
+
+        <Slide direction="up" triggerOnce
+          style={{
+            display: 'flex',
+            position: "absolute",
+            bottom: "0px",
+            right: width === 'xs' ? '10px' : "20px",
+            width: "600px",
+            maxWidth: width === 'md' ? '416px' : width === 'sm' ? '260px' : width === 'xs' ? '151px' : "44%",
+          }}
+        >
           <img src={DefR} className={classes.imgDefendersRight} alt="defenders" />
         </Slide>
       </Box>

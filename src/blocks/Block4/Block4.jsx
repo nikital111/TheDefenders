@@ -7,8 +7,7 @@ import Def2 from "../../img/defenders/Персонажи в рядок.png";
 import Сlouds from "../../img/back/Тучи.png";
 import SharedDivider from "../../components/SharedDivider";
 import SharedButton from "../../components/SharedButton";
-import Slide from 'react-reveal/Slide';
-import Bounce from 'react-reveal/Bounce';
+import { Slide, Bounce } from "react-awesome-reveal";
 
 function Block4({ width }) {
   const useStyles = makeStyles((theme) => ({
@@ -54,9 +53,7 @@ function Block4({ width }) {
       marginBottom: width === 'sm' || width === 'xs' ? '20px' : '60px',
     },
     imgDefenders: {
-      position: "absolute",
-      bottom: "0px",
-      maxWidth: width === 'md' ? '684px' : width === 'sm' ? '448px' : width === 'xs' ? '245px' : "90%",
+      width: '100%'
     },
   }));
   const classes = useStyles();
@@ -72,7 +69,7 @@ function Block4({ width }) {
               margin: 'auto'
             }}
           >
-            <Bounce left >
+            <Bounce triggerOnce>
               <Typography
                 className={classes.mainText}
                 style={{
@@ -90,24 +87,33 @@ function Block4({ width }) {
               alignSelf: 'center',
             }}
           >
-            <Slide right>
-              <SharedButton back="black"
-                style={{
-                  marginTop: '0px',
-                  marginBottom: width === 'md' ? '70px' : width === 'sm' ? '50px' : width === 'xs' ? '15px' : '100px',
-                  padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-                  fontSize: width === 'xs' ? '21px' : '',
-                  minWidth: width === 'xs' ? '100%' : '200px'
-                }}
-              >Join the party
-              </SharedButton>
+            <Slide direction="right" triggerOnce>
+              <a href="https://discord.gg/thedefenders" target="_blank">
+                <SharedButton back="black"
+                  style={{
+                    marginTop: '0px',
+                    marginBottom: width === 'md' ? '70px' : width === 'sm' ? '50px' : width === 'xs' ? '15px' : '100px',
+                    padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                    fontSize: width === 'xs' ? '21px' : '',
+                    minWidth: width === 'xs' ? '100%' : '200px'
+                  }}
+                >Join the party
+                </SharedButton>
+              </a>
             </Slide>
           </Box>
-          <Slide left>
+          <Slide triggerOnce
+            style={{
+              display: 'flex',
+              position: "absolute",
+              bottom: "0px",
+              maxWidth: width === 'md' ? '684px' : width === 'sm' ? '448px' : width === 'xs' ? '245px' : "90%",
+            }}
+          >
             <img src={Def1} className={classes.imgDefenders} alt="def" />
           </Slide>
         </Box>
-        <Slide left>
+        <Slide triggerOnce>
           <Typography
             className={classes.mainText}
             style={{
@@ -125,16 +131,18 @@ function Block4({ width }) {
             alignSelf: 'center',
           }}
         >
-          <Slide right>
-            <SharedButton back="black"
-              style={{
-                margin: '0px',
-                padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
-                fontSize: width === 'xs' ? '21px' : '',
-                minWidth: width === 'xs' ? '100%' : '200px'
-              }}
-            >Join the club
-            </SharedButton>
+          <Slide direction="right" triggerOnce>
+            <a href="https://discord.gg/thedefenders" target="_blank">
+              <SharedButton back="black"
+                style={{
+                  margin: '0px',
+                  padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
+                  fontSize: width === 'xs' ? '21px' : '',
+                  minWidth: width === 'xs' ? '100%' : '200px'
+                }}
+              >Join the club
+              </SharedButton>
+            </a>
           </Slide>
         </Box>
         <Box
@@ -145,7 +153,9 @@ function Block4({ width }) {
             display: 'flex'
           }}
         >
-          <Slide bottom>
+          <Slide direction="up" triggerOnce
+            style={{ display: 'flex' }}
+          >
             <img src={Def2} style={{
               maxWidth: width === 'md' ? '684px' : width === 'sm' ? '448px' : width === 'xs' ? '245px' : "100%",
             }} alt="def" />

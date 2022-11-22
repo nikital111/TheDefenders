@@ -8,9 +8,9 @@ contract I_AM_UKRAINIAN is ERC721, Ownable {
     using Strings for uint256;
 
     string private baseURI =
-        "ipfs://QmUeeF2e4xyehR5pFwCA26xHTS7RTSuFnsKEVVuSWzbQgS/";
+        "ipfs://QmS5m6LEM12to2DgFFEYtfNBWTfhyVeAdFyBJ2YoQutAcw/";
     string private baseContractURI =
-        "ipfs://QmeRMfUzVGjjsPTpBYRdnZfjSQ6u3N6vdDi2LSpVdELJsA";
+        "ipfs://QmQLEudADKJhY48C7aR31JtE9neVuiYmbSSh9Wxs2PvcWB";
     uint256 internal currentIndex;
     uint256 internal maxSupply = 10000;
     uint256 public price = 0.01 ether;

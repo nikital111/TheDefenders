@@ -22,7 +22,7 @@ interface AppInt {
   width: string;
 }
 
-const addressMint = "0x7400478DCAc40bA926f66881FE8C33601138f8c0";
+const addressMint = "0x59B457988B0787b8102B9bC945D8e8d5C406b9eA";
 
 function App({ width }: AppInt) {
   const [web3, setWeb3] = useState(new Web3(window.ethereum));
@@ -31,7 +31,7 @@ function App({ width }: AppInt) {
 
   useEffect(() => {
     if (window.ethereum) {
-      ff();
+      // ff();
     }
   }, []);
 

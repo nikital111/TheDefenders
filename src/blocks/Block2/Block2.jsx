@@ -5,8 +5,7 @@ import Def from "../../img/defenders/Перс 1.png";
 import Сlouds from "../../img/back/Тучи.png";
 import SharedButton from "../../components/SharedButton";
 import SharedDivider from "../../components/SharedDivider";
-import Slide from 'react-reveal/Slide';
-import Fade from 'react-reveal/Fade';
+import { Slide, Fade } from 'react-awesome-reveal';
 
 function Block2({ width }) {
   const useStyles = makeStyles((theme) => ({
@@ -36,11 +35,7 @@ function Block2({ width }) {
       margin: '0px auto',
     },
     imgDefenders: {
-      position: "absolute",
-      bottom: "0px",
-      left: width === 'md' ? '3%' : width === 'sm' ? '0%' : width === 'xs' ? 'none' : "20%",
-      width: "560px",
-      maxWidth: width === 'md' ? '560px' : width === 'sm' ? '320px' : width === 'xs' ? '40%' : "44%",
+      width: '100%'
     },
     bigBox: {
       display: "flex",
@@ -91,7 +86,7 @@ function Block2({ width }) {
       <Box className={classes.inBox}>
 
         <Box className={classes.bigBox}>
-          <Slide top>
+          <Slide direction="down" triggerOnce>
             <Box className={classes.miniBox}>
               <Typography className={classes.mainText}>10.000</Typography>
               <Typography className={classes.subText}>DEFENDERS</Typography>
@@ -107,7 +102,7 @@ function Block2({ width }) {
           </Slide>
         </Box>
 
-        <Slide left>
+        <Slide triggerOnce>
           <Typography
 
             className={classes.mainText}
@@ -120,7 +115,7 @@ function Block2({ width }) {
         </Slide>
 
         <Box className={classes.aboutBox}>
-          <Fade bottom>
+          <Fade direction="up" triggerOnce>
             <Typography
               className={classes.aboutText}>
               10.000 nft colection the defenders living on ethereum blockchain.
@@ -142,7 +137,7 @@ function Block2({ width }) {
                 marginBottom: width === 'sm' || width === 'xs' ? '0px' : '40px'
               }}
             >
-              it a battle royale with revolutionary new technologies.
+              it's a battle royale with revolutionary new technologies.
             </Typography>
           </Fade>
           <Box
@@ -151,20 +146,29 @@ function Block2({ width }) {
               minWidth: width === 'xs' ? '100%' : '200px'
             }}
           >
-            <Slide right>
-              <a href="#mint">
-                <SharedButton back={"#404F55"} style={{
+            <Slide direction="right" triggerOnce>
+              <a href="https://www.premint.xyz/thedefenders/" target="_blank">
+                <SharedButton back={"#00588B"} style={{
                   padding: width === 'sm' ? '10px' : width === 'xs' ? '7px' : '20px',
                   fontSize: width === 'xs' ? '21px' : '',
                   minWidth: width === 'xs' ? '100%' : '200px'
-                }}>MINT</SharedButton>
+                }}>Join the waitlist</SharedButton>
               </a>
             </Slide>
           </Box>
         </Box>
 
 
-        <Slide bottom>
+        <Slide direction="up" triggerOnce
+          style={{
+            display: 'flex',
+            position: "absolute",
+            bottom: "0px",
+            left: width === 'md' ? '3%' : width === 'sm' ? '0%' : width === 'xs' ? 'none' : "20%",
+            width: "560px",
+            maxWidth: width === 'md' ? '560px' : width === 'sm' ? '320px' : width === 'xs' ? '40%' : "44%",
+          }}
+        >
           <img src={Def} className={classes.imgDefenders} alt="defenders" />
         </Slide>
       </Box>

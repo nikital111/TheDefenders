@@ -11,8 +11,7 @@ import Text3 from "../../img/text/artText3.png";
 import Fon from "../../img/back/Подложка под текст 1 фазы.png";
 import Сlouds from "../../img/back/Тучи.png";
 import SharedDivider from "../../components/SharedDivider";
-import Bounce from 'react-reveal/Bounce';
-import Slide from 'react-reveal/Slide';
+import { Slide, Bounce } from "react-awesome-reveal";
 
 function Block3({ width }) {
   const useStyles = makeStyles((theme) => ({
@@ -94,7 +93,7 @@ function Block3({ width }) {
   return (
     <Box className={classes.box}>
       <Box className={classes.inBox}>
-        <Bounce top>
+        <Bounce direction="down" triggerOnce>
           <Typography
             id="roadmap"
             className={classes.mainText}
@@ -109,7 +108,7 @@ function Block3({ width }) {
           </Typography>
         </Bounce>
         <Box className={classes.bigBox}>
-          <Slide left>
+          <Slide triggerOnce>
             <Box className={classes.miniBox}
               style={{
                 width: width === 'sm' || width === 'xs' ? '95%' : '80%'
@@ -123,7 +122,7 @@ function Block3({ width }) {
           </Slide>
 
 
-          <Slide right>
+          <Slide direction="right" triggerOnce>
             <Box className={classes.miniBox}>
 
               <Box className={classes.backBox}
@@ -141,10 +140,10 @@ function Block3({ width }) {
                 }}
               />
             </Box>
-          </Slide>
+          </Slide >
 
 
-          <Slide left>
+          <Slide triggerOnce>
             <Box className={classes.miniBox}
               style={{
                 width: width === 'sm' || width === 'xs' ? '95%' : width === 'md' ? "70%" : '100%'
